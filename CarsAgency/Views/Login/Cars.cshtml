@@ -1,0 +1,34 @@
+﻿@model Car
+
+<table>
+    <tr><td>
+        <form asp-action="CarSearch" asp-controller="Login" method="post">
+            <table>
+                <tr>
+                    <td>Search:</td>
+                    <td>
+                    <input type="text" placeholder="Car Model" asp-for="Model"/>
+                    </td>
+                    <td><button type="submit">Searh</button></td>
+                </tr>
+            </table>
+            
+        </form>
+        
+    
+   </td></tr>
+@foreach(Car car in ViewBag.CarsInfo){
+        <tr>
+        <td><img width="400" height="200" src="@Url.Content("~/lib/"+ car.Id.ToString() + ".jpg")"/> </td>
+        <td width="400"><h1>Model: @car.Model</h1></td>
+        <td><h1>StockPrice: @car.StockPrice</h1></td>
+        <td><a asp-controller="Login"
+       asp-action="CarDetails" 
+       asp-route-id="@car.Id">Details</a></td>
+    </tr>
+}
+</table>
+
+@if(ViewBag.CarsInfo.Count==0){
+    <div>No cars with that model can be found!!</div>
+}

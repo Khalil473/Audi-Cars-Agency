@@ -1,0 +1,30 @@
+﻿@model Employee
+@{
+     Layout = null;
+}
+<head>
+    <title>Login</title>
+</head>
+<style>
+    #errormsg{background-color:red; color: black; display: inline;}
+    #center{
+        margin: 20% auto;
+    }
+    body {
+      background-image: url('@Url.Content("~/lib/Background.jpg")');
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+button,div{
+    width: 100%
+}
+</style>
+
+<form method="post" asp-action="MainScreen">
+    <table id="center">
+        <tr><td colspan="1"><div id="errormsg">@ViewBag.ErrorMsg</div></td></tr>
+        <tr><td><input placeholder="Email" type="text" asp-for="Email" /></td> </tr>
+        <tr><td><input placeholder="Password" type="password" asp-for="Password" /></td> </tr>
+        <tr><td colspan="1"><button  type="submit">Login</button> </td></tr>
+    </table>
+</form>

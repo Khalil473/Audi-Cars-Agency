@@ -1,0 +1,29 @@
+﻿@model Bought
+ 
+<style>
+button{
+    width: 100%
+}
+ #center{
+        margin: 20% auto;
+    }
+</style>
+
+<form method="post" asp-action="FinalSale" id="ff">
+    <table id="center">
+       <tr>
+           <td><label asp-for="ClientId">Buyer Name</label></td>
+           <td> 
+           <select asp-for="ClientId">
+                @foreach(Client client in ViewBag.Clients)
+                 {
+                    <option value="@client.Id">@client.Name</option>
+                 }
+            </select>
+            </td>
+        </tr>
+        <tr><td><label asp-for="PayMethod">Pay Method</label></td><td><input placeholder="Enter The Buy Method" type="text" asp-for="PayMethod" required/></td></tr>
+        <tr><td colspan="2"><button class="btn btn-primary" style="width:100%; height: 50px; line-height: 50px;" type="submit">Finish</button></td></tr>
+    </table>
+</form>
+

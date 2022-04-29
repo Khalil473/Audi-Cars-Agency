@@ -1,0 +1,19 @@
+﻿@model ModificationPart
+<style>
+button{
+    width: 100%
+}
+ #center{
+        margin: 20% auto;
+    }
+</style>
+    
+
+<form method="post" asp-action="AddOneMod" id="ff">
+    <table id="center">
+        <tr><td><input placeholder="Modification Name" type="text" asp-for="Name" required /></td> </tr>
+        <tr><td><input placeholder="Price $" type="number" asp-for="Price" required /></td> </tr>
+        <tr><td ><button type="submit">Add</button> </td></tr>
+        <tr><td ><a class="btn btn-primary" style="width:100%; height: 150px; line-height: 150px;" asp-action="MainScreen" asp-controller="Login">Finish</a> </td></tr>
+    </table>
+</form>

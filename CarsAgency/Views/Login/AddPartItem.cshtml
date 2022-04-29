@@ -1,0 +1,18 @@
+﻿@model PartsForSale
+<style>
+button{
+    width: 100%
+}
+ #center{
+        margin: 20% auto;
+    }
+</style>
+
+<form method="post" asp-action="AddNewPart">
+    <table id="center">
+        <tr><td><input type="text" asp-for="Name" placeholder="Part Name" /></td></tr>
+        <tr><td><input type="number" asp-for="Quantity" placeholder="Part Quantity" /></td></tr>
+        <tr><td><input type="number" asp-for="Price" placeholder="Item Price" /></td></tr>
+        <tr><td><button type="submit">Add</button></td></tr>
+    </table>
+</form>

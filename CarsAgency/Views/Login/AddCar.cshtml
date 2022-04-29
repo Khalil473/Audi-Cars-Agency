@@ -1,0 +1,17 @@
+﻿@model Car
+<style>
+button{
+    width: 100%
+}
+ #center{
+        margin: 20% auto;
+    }
+</style>
+
+<form method="post" asp-action="AddSpecs">
+    <table id="center">
+        <tr><td><input placeholder="Car Model" type="text" asp-for="Model" required /></td> </tr>
+        <tr><td><input placeholder="Stock price$" type="number" asp-for="StockPrice" required /></td> </tr>
+        <tr><td ><button type="submit">Next</button> </td></tr>
+    </table>
+</form>

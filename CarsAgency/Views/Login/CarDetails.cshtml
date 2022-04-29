@@ -1,0 +1,36 @@
+﻿<style>
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.center1{
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+<table class=center>
+    <tr><td colspan="2"><img style="max-width: 100%; text-align: center;" src="@ViewBag.PhotoPath" /></td></tr>
+    <tr><td colspan="2" class="center1"><h3>Audi @ViewBag.Model</h3></td></tr>
+   
+    <tr><td style="text-align:center" colspan="2">Color: @ViewBag.Color</td></tr>
+    <tr><td style="text-align:center" colspan="2">Transmition Type: @ViewBag.Trans</td></tr>
+    <tr><td style="text-align:center" colspan="2">Fuel Type: @ViewBag.FuelType</td></tr>
+    
+    <tr><td style="text-align:center">Stock Price: @ViewBag.Price</td><td style="text-align:center">Total Price: @ViewBag.TotalPrice</td></tr>
+    @if (ViewBag.ModParts.Count != 0)
+    {
+            <tr>
+            <td colspan="2"><div class="center1"><h3>Modifications</h3></div></td>
+        </tr>
+       @foreach(ModificationPart modpart in ViewBag.ModParts)
+        {
+            <tr><td style="text-align:center">@modpart.Name</td> <td style="text-align:center">@modpart.Price</td></tr>
+        }
+        
+    }
+    
+
+</table>

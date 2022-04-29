@@ -1,0 +1,18 @@
+﻿@model Client
+    <style>
+    #center{
+        margin: 20% auto;
+    }
+    button{
+        width: 100%
+    }
+</style>
+
+<form method="post" asp-action="EditClient1">
+    <table id="center">
+        <tr><td><input placeholder="Name" type="text" asp-for="Name" /></td> </tr>
+        <tr><td><input placeholder="Address" type="text" asp-for="Adress" /></td> </tr>
+        <tr><td><input placeholder="Phone Number" type="text" asp-for="PhoneNumber" /></td> </tr>
+        <tr><td><button type="submit" class="btn btn-primary">Edit</button></td></tr>
+    </table>
+</form>

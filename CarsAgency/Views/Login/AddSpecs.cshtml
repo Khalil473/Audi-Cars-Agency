@@ -1,0 +1,22 @@
+﻿@model Specifications
+<style>
+button{
+    width: 100%
+}
+ #center{
+        margin: 20% auto;
+    }
+</style>
+
+<form method="post" asp-action="AddMods">
+    <table id="center">
+        <tr><td><input placeholder="Car Color" type="text" asp-for="Color" required /></td> </tr>
+        <tr><td><input placeholder="Transmition Type" type="text" asp-for="Transmission" required /></td> </tr>
+        <tr><td><select asp-for="FuelType" required>
+            <option value="@FuelType.Diesel">Diesel</option>
+            <option value="@FuelType.Ethanol">Ethanol</option>
+            <option value="@FuelType.Gasoline">Gasoline</option>
+        </select></td></tr>
+        <tr><td ><button type="submit">Next</button> </td></tr>
+    </table>
+</form>

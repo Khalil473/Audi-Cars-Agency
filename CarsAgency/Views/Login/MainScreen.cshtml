@@ -1,0 +1,51 @@
+﻿
+@{
+    string name = ViewBag.User.Name;
+    Employee m=ViewBag.User;
+    ViewData["Title"] = "Main Screen";
+}
+Welcome @name
+<style>
+    .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.center1{
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+<table class="center">
+    <tr><td colspan="3" class="text-center"><img style="max-width: 50%; text-align: center;" src="@Url.Content("~/lib/audi-logo.png")" /></td></tr>
+    
+    
+    <tr><td colspan="3" class="center1" style="text-align: center;"><h3>Cars</h3></td></tr>
+    <tr>
+        <td style="text-align: center;"><a class="btn btn-primary" style="width: 100%; height: 150px; line-height: 150px;" asp-action="Cars" asp-controller="Login">All Cars</a></td>
+        <td style="text-align: center;"><a class="btn btn-primary" style="width: 100%; height: 150px; line-height: 150px;" asp-action="AvalibaleCars" asp-controller="Login">Avalible Cars</a></td>
+        <td style="text-align: center;"><a class="btn btn-primary" style="width: 100%; height: 150px; line-height: 150px;" asp-action="SoldCars" asp-controller="Login">Sold Cars</a></td> 
+    </tr>
+    <tr>
+        <td style="text-align: left;"><a class="btn btn-success" style="width: 100%; height: 150px; line-height: 150px;" asp-action="AddCar" asp-controller="Login">Add new Car</a></td>
+        <td style="text-align: right;" colspan="2"> <a class="btn btn-warning" style="width: 100%; height: 150px; line-height: 150px;" asp-action="SellCar" asp-controller="Login">Sell a Car</a></td>
+    </tr>
+
+    <tr><td colspan="3" class="center1" style="text-align: center;"><h3>Parts</h3></td></tr>
+   <tr>
+        <td colspan="3" style="text-align: center;"><a class="btn btn-primary" style="width: 100%; height: 150px; line-height: 150px;" asp-action="ShowParts" asp-controller="Login">All Parts</a></td>
+   </tr>
+
+
+    @if (m.EmployeeId == 0)
+    {
+        <tr><td colspan="3" class="center1" style="text-align: center;"><h3>Management</h3></td></tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><a class="btn btn-primary" style="width: 100%; height: 150px; line-height: 150px;" asp-action="ShowEmployees" asp-controller="Login">All Employees</a></td>
+            <td colspan="1" style="text-align: center;"><a class="btn btn-danger" style="width: 100%; height: 150px; line-height: 150px;" asp-action="ShowClients" asp-controller="Login">All Clients</a></td>
+        </tr>
+    }
+
+</table>
